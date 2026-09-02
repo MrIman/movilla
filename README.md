@@ -2,6 +2,11 @@
 
 Statyczna strona (HTML + CSS + GSAP), bez frameworka i bez procesu budowania w przeglądarce.
 
+## Gałęzie
+
+- `nestora` — wersja główna: minimalizm inspirowany projektem Nestora, duże zdjęcia, mobile-first.
+- `imp` — alternatywna wersja zbudowana pluginem impeccable (świat „harmonogram budowy”).
+
 ## Struktura
 
 ```
@@ -25,7 +30,7 @@ Następnie otwórz http://localhost:8765. Strona wymaga serwera HTTP (nie dział
 ## Edycja treści projektów
 
 Treści podstron (parametry, opisy, warianty, rzuty, specyfikacja) są w jednym miejscu:
-`_materials/build_site.py` → lista `PROJECTS`. Po zmianie uruchom:
+`_materials/data.py` → lista `PROJECTS`. Szablony HTML są w `_materials/build_site.py`. Po zmianie uruchom:
 
 ```bash
 python3 _materials/build_site.py
