@@ -1,0 +1,6 @@
+# materiały źródłowe (PDF, oryginalne PNG) – 500+ MB, trzymane poza repo
+_materials/Movilla str/
+# zrzuty i pliki robocze pluginu impeccable
+.impeccable/review/*.png
+.impeccable/live/
+.DS_Store

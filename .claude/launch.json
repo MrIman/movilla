@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "movilla", "runtimeExecutable": "node", "runtimeArgs": ["_materials/serve.js", "8765"], "port": 8765 }
+  ]
+}
