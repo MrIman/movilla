@@ -143,6 +143,14 @@ figcaption { font-size: .85rem; color: var(--ink-3); margin-top: 10px; }
 .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; color: var(--white); isolation: isolate; overflow: hidden; }
 .hero__media { position: absolute; inset: 0; z-index: -1; background: #2b2f2a; }
 .hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; }
+.hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; opacity: 0; transition: opacity 1.2s ease; pointer-events: none; }
+.hero__video.is-ready { opacity: 1; }
+.hero__toggle { position: absolute; z-index: 2; right: var(--gutter); top: calc(var(--nav-h) + 12px); width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.45); color: var(--white); display: grid; place-items: center; background: rgba(20,20,15,.25); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); transition: background .25s; }
+.hero__toggle:hover { background: rgba(20,20,15,.5); }
+.hero__toggle[hidden] { display: none; }
+.hero__toggle .ic { width: 16px; height: 16px; }
+.hero__toggle [hidden] { display: none; }
+@media (min-width: 900px) { .hero__toggle { top: auto; bottom: clamp(24px, 5vh, 48px); right: calc(var(--gutter) + 60px); } }
 .hero__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,20,15,.32) 0%, rgba(20,20,15,0) 35%, rgba(20,20,15,.2) 65%, rgba(20,20,15,.8) 100%); }
 .hero__content { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: calc(var(--nav-h) + 40px) var(--gutter) clamp(40px, 8vh, 96px); display: grid; gap: 28px; }
 .hero__title { font-size: clamp(2.35rem, 6.4vw, 5.4rem); font-weight: 500; letter-spacing: -.035em; line-height: 1.02; text-wrap: balance; }
@@ -436,6 +444,12 @@ figcaption { font-size: .85rem; color: var(--ink-3); margin-top: 10px; }
 .lightbox__nav--prev { left: 16px; }
 .lightbox__nav--next { right: 16px; }
 @media (min-width: 760px) { .lightbox { padding: 48px; } .lightbox__nav { top: 50%; bottom: auto; transform: translateY(-50%); } .lightbox__nav--prev { left: 24px; } .lightbox__nav--next { right: 24px; } }
+
+/* ---------- przejścia między stronami ---------- */
+@keyframes page-in { from { opacity: 0; } to { opacity: 1; } }
+.js-motion main, .js-motion .footer { animation: page-in .5s ease both; }
+body.is-leaving main, body.is-leaving .footer { opacity: 0; transform: translateY(-10px); transition: opacity .3s ease, transform .3s ease; }
+.pj__media, .form__img { will-change: transform; }
 
 /* ---------- animacje: stan początkowy tylko gdy JS i ruch dozwolony ---------- */
 .js-motion [data-reveal], .js-motion [data-stagger] > * { opacity: 0; transform: translateY(24px); }

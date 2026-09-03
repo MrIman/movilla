@@ -16,6 +16,7 @@ css/style.css              style
 js/main.js                 animacje GSAP i interakcje
 js/vendor/                 GSAP 3.14 (gsap, ScrollTrigger, ScrollSmoother, SplitText)
 img/<projekt>/*.webp       zdjęcia (1920 px + wersja -960 px), rzuty, przekroje
+video/hero.mp4             film w tle hero (pętla 20 s, 1080p) + hero-720.mp4 dla telefonów; hero-alt*.mp4 to wariant zapasowy
 _materials/                materiały źródłowe (katalogi PDF, oryginalne zdjęcia) i skrypty
 ```
 

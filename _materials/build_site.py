@@ -152,7 +152,11 @@ def index_html():
 <main id="main">
 
 <section class="hero" id="hero">
-  <div class="hero__media">{pic("img/forest/hero.webp", "Dom A-frame MoVilla ForestHouse w górskim krajobrazie o zmierzchu", lazy=False, sizes="100vw")}</div>
+  <div class="hero__media">
+    {pic("img/forest/hero.webp", "Dom A-frame MoVilla ForestHouse w górskim krajobrazie o zmierzchu", lazy=False, sizes="100vw")}
+    <video class="hero__video" muted loop playsinline preload="none" poster="img/forest/hero-960.webp" aria-hidden="true" tabindex="-1" data-src="video/hero.mp4" data-src-mobile="video/hero-720.mp4"></video>
+    <button class="hero__toggle" type="button" aria-pressed="true" aria-label="Zatrzymaj film w tle" hidden><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path class="ic-pause" d="M9 6v12M15 6v12"/><path class="ic-play" d="M8 5v14l11-7z" hidden/></svg></button>
+  </div>
   <div class="hero__content">
     <h1 class="hero__title"><span class="line">Nowoczesne domy</span><span class="line">całoroczne.</span><span class="line hero__accent">Gotowe w 30–60 dni.</span></h1>
     <div class="hero__aside">
@@ -179,7 +183,7 @@ def index_html():
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <h2 class="h2">Pięć projektów.<br>Jedna technologia.</h2>
-      <p class="lead">Od kompaktowego domu z łukowym dachem po 130‑metrową stodołę. Każdy w stalowej konstrukcji, każdy całoroczny.</p>
+      <p class="lead">Od kompaktowego domu z dachem łukowym po 130‑metrowy dom z dachem dwuspadowym. Każdy w stalowej konstrukcji, każdy całoroczny.</p>
     </div>
     <div class="pj-grid">{cards}</div>
   </div>
@@ -189,20 +193,20 @@ def index_html():
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <h2 class="h2">Trzy bryły do wyboru.</h2>
-      <p class="lead">Ta sama konstrukcja i ten sam standard. Różni je forma dachu i charakter wnętrza.</p>
+      <p class="lead">Ta sama stalowa konstrukcja i ten sam standard wykończenia. Różnią się formą dachu i charakterem wnętrza.</p>
     </div>
     <div class="forms__grid">
       <a class="form" href="projekty/archouse-70.html" data-reveal>
-        <span class="form__img">{pic("img/arc70/lake-2.webp", "Dom z łukowym dachem ArcHouse", sizes="(max-width:760px) 100vw, 33vw")}</span>
-        <span class="form__body"><h3>Łuk</h3><p>Krążyny stalowe tworzą łukowy dach przechodzący w ścianę. Przeszklony szczyt, antresola, wnętrze bez ostrych kątów.</p><span class="form__models">ArcHouse 70 · MYSA 120</span></span>
+        <span class="form__img">{pic("img/arc70/lake-2.webp", "Dom ArcHouse z dachem łukowym", sizes="(max-width:760px) 100vw, 33vw")}</span>
+        <span class="form__body"><h3>Dach łukowy</h3><p>Stalowe krążyny tworzą łuk, który płynnie przechodzi w ścianę. Przeszklony szczyt, antresola i wnętrze bez ostrych kątów.</p><span class="form__models">ArcHouse 70 · MYSA 120</span></span>
       </a>
       <a class="form" href="projekty/barnhouse-85.html" data-reveal>
-        <span class="form__img">{pic("img/barn85/ext-2.webp", "Nowoczesna stodoła BarnHouse", sizes="(max-width:760px) 100vw, 33vw")}</span>
-        <span class="form__body"><h3>Stodoła</h3><p>Dwuspadowy dach z blachy na rąbek, ciemna elewacja, przeszklona ściana szczytowa i taras.</p><span class="form__models">BarnHouse 85 · BarnHouse 130</span></span>
+        <span class="form__img">{pic("img/barn85/ext-2.webp", "Dom BarnHouse z dachem dwuspadowym", sizes="(max-width:760px) 100vw, 33vw")}</span>
+        <span class="form__body"><h3>Dach dwuspadowy</h3><p>Klasyczna, prosta bryła: dach z blachy na rąbek, przeszklona ściana szczytowa i taras od strony ogrodu.</p><span class="form__models">BarnHouse 85 · BarnHouse 130</span></span>
       </a>
       <a class="form" href="projekty/foresthouse.html" data-reveal>
         <span class="form__img">{pic("img/forest/ext-2.webp", "Dom A-frame ForestHouse w lesie", sizes="(max-width:760px) 100vw, 33vw")}</span>
-        <span class="form__body"><h3>A‑frame</h3><p>Trójkątna bryła z wysokim przeszkleniem frontu i tarasem na piętrze. Gotowa do zamieszkania, także jako produkt inwestycyjny.</p><span class="form__models">ForestHouse</span></span>
+        <span class="form__body"><h3>A‑frame</h3><p>Trójkątna bryła z wysokim przeszkleniem frontu i tarasem na piętrze. Dom gotowy do zamieszkania, także na wynajem.</p><span class="form__models">ForestHouse</span></span>
       </a>
     </div>
   </div>
@@ -232,7 +236,7 @@ def index_html():
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <h2 class="h2">Od rozmowy do kluczy.</h2>
-      <p class="lead">Cztery etapy. Większość pracy dzieje się w hali, nie na Twojej działce.</p>
+      <p class="lead">Cztery etapy. Większość prac odbywa się w hali produkcyjnej, nie na Twojej działce.</p>
     </div>
     <ol class="steps" data-stagger>
       <li><span class="steps__num">1</span><h3>Wybór i konfiguracja</h3><p>Wybierasz model i wariant: antresola otwarta lub zamknięta, pełny strop, garaż. Ustalamy zakres i standard.</p></li>
@@ -262,7 +266,7 @@ def index_html():
   <div class="wrap contact__grid">
     <div class="contact__text" data-reveal>
       <h2 class="h2">Porozmawiajmy o Twoim domu.</h2>
-      <p class="lead">Napisz, który projekt Cię interesuje i gdzie jest działka. Przygotujemy indywidualną konfigurację, zakres realizacji i wycenę.</p>
+      <p class="lead">Napisz, który projekt Cię interesuje i gdzie znajduje się działka. Przygotujemy indywidualną konfigurację, zakres realizacji i wycenę.</p>
       <address class="contact__info"><a class="contact__mail" href="mailto:hello@movilla.pl">hello@movilla.pl</a><span>ADA Group Sp. z o.o.<br>Jesionowa 22, 40‑158 Katowice<br>NIP 9542897994</span></address>
     </div>
     <form class="form-grid" novalidate data-reveal>
@@ -334,14 +338,14 @@ def project_html(p):
 </section>
 
 <section class="pint">
-  <div class="wrap sec-head" data-reveal><h2 class="h2">Przykładowa aranżacja wnętrz.</h2><p class="lead">Przewiń w bok. Dotknij zdjęcia, aby je powiększyć.</p></div>
+  <div class="wrap sec-head" data-reveal><h2 class="h2">Przykładowa aranżacja wnętrz.</h2><p class="lead">Przewiń w bok. Kliknij zdjęcie, aby je powiększyć.</p></div>
   <div class="strip" tabindex="0">{interiors}</div>
   <p class="wrap note">Wizualizacje wnętrz mają charakter poglądowy i przedstawiają przykładową aranżację.</p>
 </section>
 
 <section class="variants" id="warianty">
   <div class="wrap">
-    <div class="sec-head" data-reveal><h2 class="h2">Warianty i konfiguracje.</h2><p class="lead">Dopasuj układ do siebie: wybierz wariant, aby zobaczyć rzut lub wizualizację.</p></div>
+    <div class="sec-head" data-reveal><h2 class="h2">Warianty i konfiguracje.</h2><p class="lead">Dopasuj układ do swoich potrzeb. Wybierz wariant, aby zobaczyć rzut lub wizualizację.</p></div>
     <div class="tabs" role="tablist" aria-label="Warianty">{tabs}</div>
     <div class="tabpanels">{panels}</div>
   </div>
@@ -349,7 +353,7 @@ def project_html(p):
 
 <section class="plans" id="rzuty">
   <div class="wrap">
-    <div class="sec-head" data-reveal><h2 class="h2">Rzuty i przekroje.</h2><p class="lead">Dotknij arkusz, aby zobaczyć go w powiększeniu.</p></div>
+    <div class="sec-head" data-reveal><h2 class="h2">Rzuty i przekroje.</h2><p class="lead">Kliknij rzut, aby go powiększyć.</p></div>
     <div class="plans__grid">{plans}</div>
     <p class="note">Parametry mogą zostać doprecyzowane na etapie adaptacji projektu do działki i warunków lokalnych. Rzuty poglądowe; układ pomieszczeń ustalamy indywidualnie.</p>
   </div>
